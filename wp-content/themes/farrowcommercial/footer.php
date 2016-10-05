@@ -1,27 +1,49 @@
-<div class="footer wrap">
-	<div class="fineprint">
-		<div class="fineprint_links">
+
+		<div class="footer">
+			
+			<footer class="container">
+
+				<div class="row">
+				
+					<div class="copyright col-md-6">
+					
+						<p><small>&copy; 2016 Farrow Commercial, Inc. - All Rights Reserved</small></p>
+
+					</div>
+
+					<div class="disclaimer col-md-6">
+						
+						<p><small><a href="/contact">Contact</a> <a href="/disclaimer">Disclaimer</a> <a href="/privacy">Privacy Policy</a></small></p>
+
+					</div>
+
+				</div>
+
+			</footer>
+
 		</div>
-		<div class="fineprint_text">
-			&copy; 2016 Farrow Commercial, inc. All Rights Reserved.
-		</div>
-	</div>
-	<?php if( have_rows('social_media','option') ): ?>
 
-		<div class="social_links">
+	</div><!-- .site-wrap -->
 
-			<?php while ( have_rows('social_media','option') ) : the_row(); ?>
+	<?php wp_footer(); ?>
 
-				<a href="<?php echo get_sub_field('social_channel_link'); ?>" target="_blank"><img src="<?php echo get_sub_field('social_channel_icon'); ?>"></a>
+	<?php if ( $slug == "home" ) { ?>
 
-			<?php endwhile; ?>
+		<script>
 
-		</div>
+			jQuery(function($) {
+				$(document).ready(function(){
+					sameHeight($('.left-about'), $('.right-about'));
+					$(window).on('resize', function() {
+						sameHeight($('.left-about'), $('.right-about'));
+					});
+				});
+			});
 
-	<?php endif; ?>
-</div>
+		</script>
 
-<?php wp_footer(); ?>
-
+	<?php }; ?>
+	
+	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 </body>
 </html>
