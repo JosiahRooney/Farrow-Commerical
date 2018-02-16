@@ -1,0 +1,62 @@
+ /*
+Theme Name: Farrow Commercial
+Description: Designed and built by Josiah Rooney
+Version: 1.0
+Author: Josiah Rooney
+Author URI: http://rooneydev.com
+*/
+
+/*
+You may use this file to customize the CSS of the theme, but the core CSS (Sass) is in /assets/css
+*/
+
+.text-center {
+	text-align: center;
+}
+
+.branding img {
+  height: 140px;
+  width: auto;
+}
+
+.iframe-modal-container {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.iframe-modal {
+  background-color: white;
+  height: 70%;
+  left: 50%;
+  position: fixed;
+  top: 200px;
+  transform: translateX(-50%);
+  width: 90%;
+  border: 0;
+}
+
+.closer {
+  background-color: #646464;
+  color: #a9a9a9;
+  font-family: sans-serif;
+  font-size: 3rem;
+  height: 50px;
+  line-height: 50px;
+  position: fixed;
+  right: 5%;
+  text-align: center;
+  top: 150px;
+  width: 50px;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+.closer:hover {
+  color: #bbb;
+  background-color: #717171;
+  transition: 0.3s all;
+}

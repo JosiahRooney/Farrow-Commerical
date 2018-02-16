@@ -1,0 +1,1 @@
+Make changes to theme.scss, not to theme.css. Your changes will be lost if you edit the CSS file directly!
