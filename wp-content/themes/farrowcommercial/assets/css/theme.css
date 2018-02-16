@@ -1,5 +1,5 @@
 /* * * * * * * * * * * *
-Theme: Farrow Commercial
+* Theme: Farrow Commercial
 * * * * * * * * * * * */
 /* Foundation */
 @import url(normalize.css);
@@ -11,16 +11,60 @@ Theme: Farrow Commercial
 
 body {
   font-family: "Montserrat", sans-serif;
-  font-size: 16px; }
+  font-size: 16px;
+  position: relative; }
 
 a {
   color: inherit;
   text-decoration: none; }
+  a:hover {
+    color: inherit; }
 
 ul, li {
   list-style: none;
   padding: 0;
   margin: 0; }
+
+.img-fluid {
+  width: 100%;
+  height: auto; }
+
+/* Misc */
+.site-wrap {
+  min-height: 100vh; }
+
+.site-wrap,
+.interior,
+.interior .content {
+  display: flex;
+  flex-direction: column; }
+
+.interior .content .row {
+  display: flex; }
+
+.interior,
+.interior .content,
+.interior .content .row,
+.interior .content .sidebar {
+  flex: 1; }
+
+.wpcf7-form label {
+  display: block !important; }
+
+.home .about {
+  overflow: hidden !important; }
+
+.license-number {
+  color: white;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  text-align: center; }
+
+img.icon {
+  height: auto;
+  width: 15px;
+  margin-right: 10px; }
 
 /* Header */
 .primary-header {
@@ -47,26 +91,65 @@ ul, li {
     text-shadow: 0 0 0 #000; }
   .header .branding {
     padding-top: 5px; }
-  .header .navigation .menu-main-menu-container {
-    padding-top: 30px;
-    width: 100%; }
-    .header .navigation .menu-main-menu-container .current_page_item a {
-      text-decoration: underline; }
-    .header .navigation .menu-main-menu-container ul {
-      margin: 0; }
-      .header .navigation .menu-main-menu-container ul li {
-        list-style: none;
-        padding: 0;
-        display: inline-block;
-        padding-right: 32px; }
-        .header .navigation .menu-main-menu-container ul li:last-child {
-          padding-right: 0; }
-        .header .navigation .menu-main-menu-container ul li a {
-          font-family: "Oswald", sans-serif;
-          font-size: 2.7rem;
-          text-transform: uppercase;
-          display: block;
-          color: white; }
+
+.navigation .menu-main-menu-container {
+  padding-top: 30px;
+  width: 100%; }
+  .navigation .menu-main-menu-container .current_page_item a {
+    text-decoration: underline; }
+  .navigation .menu-main-menu-container ul {
+    margin: 0;
+    display: flex;
+    flex-direction: row; }
+    .navigation .menu-main-menu-container ul li {
+      list-style: none;
+      padding: 0;
+      display: inline-block;
+      flex: 1;
+      text-align: center; }
+      .navigation .menu-main-menu-container ul li:last-child {
+        padding-right: 0; }
+      .navigation .menu-main-menu-container ul li a {
+        font-family: "Oswald", sans-serif;
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        display: block;
+        color: white; }
+
+#menu-main-menu > li {
+  position: relative; }
+  #menu-main-menu > li:hover {
+    transition: 0.3s all; }
+    #menu-main-menu > li:hover .sub-menu {
+      display: block; }
+#menu-main-menu .sub-menu {
+  transition: 0.3s all;
+  display: none;
+  white-space: nowrap;
+  position: absolute;
+  z-index: 9;
+  background-color: #123761;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5); }
+  #menu-main-menu .sub-menu li {
+    display: block; }
+    #menu-main-menu .sub-menu li:hover {
+      box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.3); }
+  #menu-main-menu .sub-menu a {
+    padding: 5px 10px;
+    font-size: 1.7rem;
+    text-decoration: none; }
+
+.mobile-button {
+  display: none;
+  position: fixed;
+  top: 8px;
+  right: 20px;
+  font-size: 5rem;
+  color: white;
+  z-index: 99;
+  text-shadow: 0 0 7px rgba(0, 0, 0, 0.6); }
+  .admin-bar .mobile-button {
+    top: 36px; }
 
 /* Content */
 .main-content h2 {
@@ -196,9 +279,30 @@ ul, li {
   .interior .the_content {
     padding: 10px 20px;
     padding-bottom: 50px; }
+    .interior .the_content p {
+      line-height: 1.33;
+      margin: 20px 0; }
   .interior .sidebar {
     background-color: #367AB8;
     color: white; }
+
+/* Sidebar */
+.sidebar_section:not(:last-child) {
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3); }
+
+/* News & Media */
+.media_post {
+  margin-bottom: 30px; }
+
+/* Gallery */
+.gallery_image {
+  height: 150px;
+  overflow: hidden;
+  margin-bottom: 30px; }
+  .gallery_image img {
+    max-width: 100%; }
 
 /* Footer */
 .footer {
@@ -213,12 +317,54 @@ ul, li {
       display: inline-block;
       padding: 0 0 0 20px; }
 
+.text-center {
+  text-align: center !important; }
+
 /* Media Queries */
 @media (max-width: 1200px) {
   /* Header */
   .header h1 {
     font-size: 5rem; } }
+@media (min-width: 981px) {
+  .menu-mobile-menu-container {
+    display: none; } }
 @media (max-width: 980px) {
+  .header .navigation .menu-main-menu-container {
+    display: none; }
+
+  .sidebar {
+    display: none; }
+
+  .header .navigation .menu-mobile-menu-container {
+    background-color: #322e2f;
+    height: 100%;
+    left: -100%;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 44%;
+    z-index: 999; }
+    .header .navigation .menu-mobile-menu-container #menu-mobile-menu > li {
+      display: block;
+      color: white; }
+      .header .navigation .menu-mobile-menu-container #menu-mobile-menu > li a {
+        height: 100%;
+        width: 100%;
+        display: block;
+        padding: 10px; }
+    .header .navigation .menu-mobile-menu-container #menu-mobile-menu li:not(:last-child) {
+      border-bottom: 1px solid #aaa; }
+    .header .navigation .menu-mobile-menu-container #menu-mobile-menu .sub-menu {
+      display: block;
+      position: static;
+      box-shadow: none;
+      background: none;
+      z-index: 9;
+      padding-left: 15px; }
+
+  .mobile-button {
+    display: block; }
+
   .home-body .primary-header {
     min-height: 580px; }
 
@@ -264,8 +410,12 @@ ul, li {
   .header .pull-right {
     float: none !important; }
   .header .branding img {
-    display: none; }
-  .header .menu-main-menu-container {
     display: none; } }
+@media (max-width: 450px) {
+  .header .navigation .menu-mobile-menu-container #menu-mobile-menu li a {
+    font-size: 14px;
+    padding: 5px; }
+  .header h1 {
+    font-size: 3.9rem; } }
 
 /*# sourceMappingURL=theme.css.map */

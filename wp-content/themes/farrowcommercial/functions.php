@@ -79,3 +79,23 @@ add_action( 'after_setup_theme', 'register_menus' );
 // 		'redirect'		=> false
 // 		));	
 // }
+
+
+
+/**********************
+* Widget Areas
+*/
+
+function farrow_widgets_init() {
+
+	register_sidebar( array(
+		'name'          => 'Sidebar Content',
+		'id'            => 'main_sidebar',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>',
+	) );
+
+}
+add_action( 'widgets_init', 'farrow_widgets_init' );

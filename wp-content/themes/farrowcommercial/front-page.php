@@ -53,62 +53,34 @@
 
 				<div class="left-about col-md-6">
 					
-					<h2>About</h2>
+					<?php
 
+						$featured_title = get_field('featured_title');
+						$featured_text = get_field('featured_text');
+						$featured_image = get_field('featured_image');
 
-					<p>At assum altera blandit ius, movet impedit noluisse, qui veritus eloquentiam instructior te. Id vocibus menandri pri. Justo causae repudiare sea ex, mel no movet sonet, at mel graecis menandri. Et mei tempor possim.</p>
+					?>
 
-					<p>luptatum, vim an facete accumsan dissentiunt. Solet legimus mei ex, ut his forensibus reprehendunt. Dolore fastidii molestiae ius an, ne habeo tation efficiendi est, ei eum essent necessitatibus.</p>
+					<h2><?php echo $featured_title; ?></h2>
+
+					<div><?php echo $featured_text;?></div>
 
 				</div>
 
-				<div class="right-about col-md-6" data-parallax="scroll" data-image-src="<?php echo get_template_directory_uri() . '/assets/images/callout_services.jpg'; ?>"></div>
+				<div class="right-about col-md-6" data-parallax="scroll" data-image-src="<?php echo $featured_image; ?>"></div>
 
 			</div>
 
 			<div class="info-bar">
-					
-				<div class="row">
-					
-					<div class="info-bar-box col-md-3">
 
-						<div class="info-bar-box-content">
-							<h2>2003</h2>
-							<p>Year<br> Established</p>
-						</div>
+				<div class="info-bar-box">
 
-					</div>
-
-					<div class="info-bar-box col-md-3">
-
-						<div class="info-bar-box-content">
-							<h2>183</h2>
-							<p>Projects<br> Completed</p>
-						</div>
-
-					</div>
-
-					<div class="info-bar-box col-md-3">
-
-						<div class="info-bar-box-content">
-							<h2>72</h2>
-							<p>Happy<br> Clients</p>
-						</div>
-
-					</div>
-
-					<div class="info-bar-box col-md-3">
-
-						<div class="info-bar-box-content">
-							<h2>23</h2>
-							<p>Awards<br> Won</p>
-						</div>
-
-					</div>
+						<h2 class="text-center">1986</h2>
+						<p class="text-center">Year Est.</p>
 
 				</div>
-				
-			</div>
+
+			</div> <!-- .info-bar -->
 
 		</div> <!-- .about -->
 
@@ -146,7 +118,7 @@
 
 				<div class="map" style="height: 500px">
 					
-					<!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3121.9123997492056!2d-122.78830868441138!3d38.51273117713073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80843e94d5967be9%3A0x2697adf9ed48488d!2s416+Aviation+Blvd%2C+Santa+Rosa%2C+CA+95403!5e0!3m2!1sen!2sus!4v1475358935292" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe> -->
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3122.1369850134456!2d-122.76090548403606!3d38.507551477432585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80843f28db6d880d%3A0x646edd24858ac67b!2s100+Wikiup+Dr%2C+Santa+Rosa%2C+CA+95403!5e0!3m2!1sen!2sus!4v1491172236123" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
 
 				</div>
 
@@ -158,15 +130,7 @@
 
 						<p>For any inquiries, questions or commendations, please call: <a href="tel:7075910225">707-591-0225</a> or fill out the following form.</p>
 
-						<form action="">
-							
-							<p><input class="form-control" type="text" placeholder="Name"></p>
-							<p><input class="form-control" type="text" placeholder="Email"></p>
-							<p><input class="form-control" type="text" placeholder="Phone"></p>
-							<p><textarea class="form-control" name="message" rows="7" placeholder="Message"></textarea></p>
-							<p><button class="btn btn-success pull-right">Send Message</button></p>
-
-						</form>
+						<?php echo do_shortcode('[contact-form-7 id="411" title="Contact form 1"]'); ?>
 
 					</div>
 
@@ -175,7 +139,7 @@
 						<h2>Office</h2>
 
 						<h3>Address</h3>
-						<p>416 Aviation Blvd, Ste. A<br>
+						<p>100 Wikiup Drive<br>
 						Santa Rosa, CA 95403</p>
 
 						<h3>Phone</h3>
