@@ -5,7 +5,7 @@
 				<div class="row">
 
 					<div class="copyright col-md-6">
-						<p><small>&copy; 2017 Farrow Commercial, Inc. - All Rights Reserved - CA License # 822805</small></p>
+						<p><small>&copy; 2017 - 2019 Farrow Commercial, Inc. - All Rights Reserved - CA License # 822805</small></p>
 					</div>
 
 					<div class="disclaimer col-md-6">
